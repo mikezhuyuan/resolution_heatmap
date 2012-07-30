@@ -107,7 +107,9 @@
 					count = end[p];
 				}
 				var xy = p.split('x');
-				count = Math.log(1+count);
+				if(count == 0)
+					continue;
+				count = Math.log(count);
 				result.push( {x: widthRatio * parseInt(xy[0]), y: HEIGHT - heightRatio * parseInt(xy[1]), count: count});	
 				if(count > max)
 					max = count;				
